@@ -47,14 +47,12 @@ export class App extends Component {
           }
 
           this.setState(prevState => ({
-            images: [...prevState.images, ...images.hits],
-          }));
-
-          this.setState({
-            status: Status.RESOLVED,
+            images: [...prevState.images, ...images.hits],status: Status.RESOLVED,
             showButton:
               this.state.page < Math.ceil(images.total / 12) ? true : false,
-          });
+          }));
+
+          
         })
 
         .then(console.log(this.state.images))
